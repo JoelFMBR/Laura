@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Especial para Você!</title>
+    
+    <!-- Meta tags Open Graph para compartilhar no WhatsApp -->
+    <meta property="og:title" content="Oferta Especial para Você!"/>
+    <meta property="og:description" content="Clique aqui para saber mais sobre uma oferta incrível!"/>
+    <meta property="og:image" content="https://example.com/imagem-do-link.jpg"/> <!-- Troque com o link da sua imagem -->
+    <meta property="og:url" content="https://example.com/seu-site.html"/> <!-- Coloque o link correto do seu site -->
+    <meta property="og:type" content="website"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fde2e4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #e63946;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            font-weight: 300;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 1.1em;
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #f06565;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #95A5A6;
+        }
+
+        #mensagemFinal {
+            font-size: 1.7em;
+            font-weight: 700;
+            color: #e63946;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .emojis {
+            font-size: 2em;
+            margin-top: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você acabou de receber uma oferta exclusiva! 🎁</h1>
+    <p>Para acessar sua surpresa, responda às perguntas abaixo.</p>
+    <p><strong>É necessário acertar todas as respostas!</strong></p>
+
+    <div id="pergunta1" class="question">
+        <p>Em que ano a Torre Eiffel foi construída?</p>
+        <button onclick="responderPergunta(1)">Resposta 1: 1889</button>
+        <button onclick="responderPergunta(1)">Resposta 2: 1850</button>
+        <button onclick="responderPergunta(1)">Resposta 3: 1900</button>
+    </div>
+
+    <div id="pergunta2" class="question hidden">
+        <p>Quantos fios de cabelo há na cabeça de Joel?</p>
+        <button onclick="responderPergunta(2)">Resposta 1: 100</button>
+        <button onclick="responderPergunta(2)">Resposta 2: 1000</button>
+        <button onclick="responderPergunta(2)">Resposta 3: Nenhum</button>
+    </div>
+
+    <div id="pergunta3" class="question hidden">
+        <p>Qual é o maior oceano do mundo?</p>
+        <button onclick="responderPergunta(3)">Resposta 1: Oceano Atlântico</button>
+        <button onclick="responderPergunta(3)">Resposta 2: Oceano Índico</button>
+        <button onclick="responderPergunta(3)">Resposta 3: Oceano Pacífico</button>
+    </div>
+
+    <div id="pergunta4" class="question hidden">
+        <p>Quantos segundos há em um dia?</p>
+        <button onclick="responderPergunta(4)">Resposta 1: 86400</button>
+        <button onclick="responderPergunta(4)">Resposta 2: 3600</button>
+        <button onclick="responderPergunta(4)">Resposta 3: 100000</button>
+    </div>
+
+    <div id="pergunta5" class="question hidden">
+        <p>Se um pato batesse a cabeça em um poste, quantas penas ficariam no chão?</p>
+        <button onclick="responderPergunta(5)">Resposta 1: 0</button>
+        <button onclick="responderPergunta(5)">Resposta 2: 1</button>
+        <button onclick="responderPergunta(5)">Resposta 3: 1000</button>
+    </div>
+
+    <div id="mensagemFinal" class="hidden">
+        <p>Surpresa! Parabéns, Laura! Você é a pessoa mais amada do mundo! 🎉💖</p>
+        <div class="emojis" id="emotes">🎉💖✨😍💫🎶</div>
+    </div>
+
+    <footer>Com amor, de quem mais te ama! ❤️</footer>
+
+    <script>
+        function responderPergunta(perguntaNumero) {
+            // Esconde a pergunta atual
+            document.getElementById("pergunta" + perguntaNumero).classList.add("hidden");
+
+            // Mostra a próxima pergunta ou a surpresa
+            if (perguntaNumero < 5) {
+                document.getElementById("pergunta" + (perguntaNumero + 1)).classList.remove("hidden");
+            } else {
+                // Após a última pergunta, mostra a mensagem final
+                document.getElementById("mensagemFinal").classList.remove("hidden");
+                document.getElementById("emotes").classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+</html>
